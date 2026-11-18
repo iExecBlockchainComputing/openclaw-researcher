@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "max_new_full_reads": 10,
+  "max_digest_papers": 5,
+  "timezone": "Europe/Paris",
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 9 * * 1",
+    "tz": "Europe/Paris"
+  },
+  "slack_destination": {
+    "channel": "slack",
+    "to": "channel:C0CFAVAV91N",
+    "accountId": "default"
+  },
+  "delivery_enabled": true,
+  "collection": {
+    "source": "both",
+    "page_size": 100,
+    "max_pages": 10
+  },
+  "note": "Authorized weekly schedule and Slack destination on 2026-11-17. Scheduled delivery uses OpenClaw announce, not direct message sends.",
+  "automation_id": "79567463-4fd6-4c44-b64b-75b4055c9495",
+  "delivery_mode": "announce"
+}

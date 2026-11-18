@@ -1,0 +1,50 @@
+# --- Workspace researcher : migration vers un remote OpenClaw ---
+# Racine du dépôt = ce dossier (~/.openclaw/workspace-researcher)
+
+# Système / éditeurs
+.DS_Store
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets et états runtime : ne jamais versionner
+.env
+.env.*
+*.key
+*.token
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite.*
+*.bak
+
+# Verrous (état transitoire)
+*.lock
+
+# Clones de dépôts tiers : à re-cloner depuis leur origin
+research-repos/
+
+# Caches reproductibles
+projects/*/runs/arxiv-cache/
+
+# --- État de la veille : volontairement NON versionné (reset accepté) ---
+# Au premier run sur le remote, la veille repart de zéro : registre vide,
+# première collecte sur la fenêtre initiale de 30 jours (cf. WEEKLY.md).
+# Sur le remote : créer projects/<projet>/corpus/references.jsonl vide si absent.
+projects/*/runs/
+projects/*/corpus/
+projects/*/archive/
+
+# --- Générés / personnels : régénérés ou recréés par le remote ---
+# Sorties de Dreaming (consolidation mémoire) : extraits de conversations non masqués
+memory/
+DREAMS.md
+# Profil utilisateur (gabarit vide aujourd'hui ; personnel une fois rempli)
+USER.md
+# Digests produits par les runs de veille (sortie, pas source)
+projects/*/digests/
